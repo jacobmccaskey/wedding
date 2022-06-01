@@ -6,11 +6,23 @@ export default function todo () {
     return (
         <div>
             <h1>{name}'s TODO'S</h1>
+            <FetchTodo name={name} />
+        </div>
+    )
+}
+
+function FetchTodo (name) {
+    if (name === 'jacob') {
+        return (
             <ul>
                 <li>Registry</li>
                 <li>HoneyFund</li>
                 <li>Landing page with countdown</li>
             </ul>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <h1>BO DO</h1>
+        )
+    }
 }
