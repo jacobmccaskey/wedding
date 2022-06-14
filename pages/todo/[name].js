@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 
-export default function todo () {
+export default function Todo () {
     const router = useRouter();
     const {name} = router.query;
     return (
         <div>
-            <h1>{name}'s TODO'S</h1>
-            <FetchTodo name={name} />
+            {/* <h1>{name}'s TODO'S</h1>
+            <FetchTodo name={name} /> */}
         </div>
     )
 }
