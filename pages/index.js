@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Container from "react-bootstrap/Container";
+import Wrapper from "../components/wrapper";
 import { useState, useEffect } from "react";
 import { useAppContext } from "../StateManager";
 
@@ -20,32 +21,39 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Mr. And Mrs. McCaskey</title>
         <meta name="description" content="McWedding App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main style={{ textAlign: "center" }}>
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "15vw",
-            textAlign: "center",
-          }}
-        >
-          <Image
-            src="/images/banner.webp"
-            alt="banner"
-            layout="fill"
-            objectFit="contain"
-          />
+      <Wrapper>
+        <div className="main_photo_container">
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "15vw",
+              textAlign: "center",
+            }}
+            className="main_photo"
+          >
+            <Image
+              src="/images/banner.webp"
+              alt="banner"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
         {/* <h1 className={styles.description}>Mr. And Mrs. Spendin Money'</h1> */}
-        <h1 style={{marginBottom:'0.5rem'}}>Mr and Mrs. Spendin Money'</h1>
-        <p style={{fontSize:'20px', color: 'darkgrey', marginTop: 0}}>BROOKINGS, OR</p>
+        <h1 style={{ marginBottom: "0.5rem" }} className="banner-txt">
+          Mr and Mrs. McCaskey
+        </h1>
+        <p style={{ fontSize: "20px", color: "darkgrey", marginTop: 0 }}>
+          BROOKINGS, OR
+        </p>
         <Navigator />
         <div
           style={{
@@ -70,7 +78,7 @@ export default function Home() {
             letterSpacing: "4px",
             fontWeight: 500,
             marginBottom: 0,
-            fontSize: '28px'
+            fontSize: "28px",
           }}
         >
           WEDDING DAY
@@ -85,34 +93,48 @@ export default function Home() {
         >
           JUNE 8, 2023
         </h3>
-        <h1>{countdown}</h1>
+        <h2 style={state.isMobile ? {fontSize: '15px'} : null}>{countdown}</h2>
         <div
-        style={{
-          padding: '0 18px 18px',
-          fontSize: '60px',
-          letterSpacing: '6px',
-          fontWeight: 300,
-          borderBottom: '1px solid #343436',
-          color: 'lightgrey',
-          fontFamily: 'Taviraj'
-        }}
-        ><p>J&A</p><hr/></div>
-      </main>
+          style={{
+            padding: "0 18px 18px",
+            fontSize: "60px",
+            letterSpacing: "6px",
+            fontWeight: 300,
+            borderBottom: "1px solid #343436",
+            color: "lightgrey",
+            fontFamily: "Taviraj",
+          }}
+        >
+          <p>J&A</p>
+          <hr />
+        </div>
+      </Wrapper>
     </div>
   );
 }
 
-
-function Navigator () {
+function Navigator() {
   return (
-    <div style={{marginBottom:'1rem'}}>
-      <Link href='/' passHref><span className='linkbtn' style={{borderBottom: '2px solid #343436'}}>Home</span></Link>
-      <Link href='/travel' passHref><span className='linkbtn'>Travel</span></Link>
-      <Link href='/photos' passHref><span className='linkbtn'>Photos</span></Link>
-      <Link href='/qa' passHref><span className='linkbtn'>Q+A</span></Link>
-      <Link href='/registry' passHref><span className='linkbtn'>Registry</span></Link>
+    <div style={{ marginBottom: "1rem" }}>
+      <Link href="/" passHref>
+        <span className="linkbtn" style={{ borderBottom: "2px solid #343436" }}>
+          Home
+        </span>
+      </Link>
+      <Link href="/travel" passHref>
+        <span className="linkbtn">Travel</span>
+      </Link>
+      <Link href="/photos" passHref>
+        <span className="linkbtn">Photos</span>
+      </Link>
+      <Link href="/qa" passHref>
+        <span className="linkbtn">Q+A</span>
+      </Link>
+      <Link href="/registry" passHref>
+        <span className="linkbtn">Registry</span>
+      </Link>
     </div>
-  )
+  );
 }
 
 function formatTime(timeStamp) {

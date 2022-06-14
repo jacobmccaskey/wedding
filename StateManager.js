@@ -1,16 +1,34 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
+
+const DEFAULT_STATE = {
+  name: "jacob McCaskey",
+  maxWidth: "1110px",
+  mobileMaxWidth: "600",
+  isMobile: false,
+  // width: window.document.documentElement.clientWidth,
+  // height: window.document.documentElement.clientHeight
+};
 
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  let sharedState = {
-      name: "jacob McCaskey",
-    }
+  const [sharedState, setSharedState] = useState(DEFAULT_STATE);
+
+  useEffect(() => {
+    const setViewPoints = () => {
+      setSharedState((prev) => ({
+        ...prev,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        isMobile: window.innerWidth <= DEFAULT_STATE.mobileMaxWidth,
+      }));
+    };
+    setViewPoints();
+    window.addEventListener("resize", setViewPoints);
+  }, []);
 
   return (
-    <AppContext.Provider value={sharedState}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
   );
 }
 
