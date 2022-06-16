@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import styles from "../styles/Home.module.css";
-import Container from "react-bootstrap/Container";
 import Wrapper from "../components/wrapper";
 import { useState, useEffect } from "react";
 import { useAppContext } from "../StateManager";
+import Navigator from '../components/Navigator'
 
 const weddingDate = new Date("Jun 8, 2023 15:00:00").getTime();
 
@@ -29,6 +27,7 @@ export default function Home() {
       </Head>
 
       <Wrapper>
+        {/* <MobileNavBar /> */}
         <div className="main_photo_container">
           <div
             style={{
@@ -49,7 +48,7 @@ export default function Home() {
         </div>
         {/* <h1 className={styles.description}>Mr. And Mrs. Spendin Money'</h1> */}
         <h1 style={{ marginBottom: "0.5rem" }} className="banner-txt">
-          Mr and Mrs. McCaskey
+          Jacob and Ashley McCaskey
         </h1>
         <p style={{ fontSize: "20px", color: "darkgrey", marginTop: 0 }}>
           BROOKINGS, OR
@@ -113,29 +112,7 @@ export default function Home() {
   );
 }
 
-function Navigator() {
-  return (
-    <div style={{ marginBottom: "1rem" }}>
-      <Link href="/" passHref>
-        <span className="linkbtn" style={{ borderBottom: "2px solid #343436" }}>
-          Home
-        </span>
-      </Link>
-      <Link href="/travel" passHref>
-        <span className="linkbtn">Travel</span>
-      </Link>
-      <Link href="/photos" passHref>
-        <span className="linkbtn">Photos</span>
-      </Link>
-      <Link href="/qa" passHref>
-        <span className="linkbtn">Q+A</span>
-      </Link>
-      <Link href="/registry" passHref>
-        <span className="linkbtn">Registry</span>
-      </Link>
-    </div>
-  );
-}
+
 
 function formatTime(timeStamp) {
   var days = Math.floor(timeStamp / (1000 * 60 * 60 * 24));

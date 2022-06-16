@@ -1,11 +1,11 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: Taviraj;
-  color: #343436;
+  font-family: Taviraj !important;
+  color: #343436 !important;
 }
 
 a {
@@ -18,30 +18,31 @@ a {
 }
 
 h1 {
-  font-family: Taviraj;
-  color: #343436;
-  font-weight: 300;
-  letter-spacing: 6px;
-  text-transform: uppercase;
+  font-family: Taviraj !important;
+  color: #343436 !important;
+  font-weight: 300 !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase !important;
+  font-size: 32px !important;
 }
 h2 {
-  font-family: Taviraj;
-  color: #343436;
-  font-weight: 300;
-  letter-spacing: 6px;
-  text-transform: uppercase;
+  font-family: Taviraj !important;
+  color: #343436 !important;
+  font-weight: 300 !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase !important;
 
 }
 
 .linkbtn {
-  font-size: 16px;
+  font-size: 16px !important;
   /* margin-right: 0.5rem; */
-  line-height: 1;
-  margin: 0 auto;
-  padding: 8px 8px 6px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  width: fit-content;
+  line-height: 1 !important;
+  margin: 0 auto !important;
+  padding: 8px 8px 6px !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+  width: fit-content !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -49,7 +50,7 @@ h2 {
     height: 30vw !important;
   }
   .banner-txt {
-    font-weight: 300;
-    font-size: 20px;
+    font-weight: 300 !important;
+    font-size: 20px !important;
   }
 }
