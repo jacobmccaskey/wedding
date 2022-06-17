@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const DEFAULT_STATE = {
-  name: "jacob McCaskey",
   maxWidth: "1110px",
   mobileMaxWidth: "600",
   isMobile: false,

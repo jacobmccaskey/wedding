@@ -44,6 +44,9 @@ h2 {
   letter-spacing: 2px !important;
   width: fit-content !important;
 }
+/* .linkbtn:active {
+  border-bottom: 2px solid #343436;
+} */
 
 @media only screen and (max-width: 600px) {
   .main_photo {

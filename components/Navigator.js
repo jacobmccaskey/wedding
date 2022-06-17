@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Navigator() {
+export default function Navigator(props) {
   // const state = useAppContext();
   const [sticky, setSticky] = useState(false);
+  const { page } = props;
   const styles = {
     sticky: {
       paddingBottom: "0.5rem",
@@ -35,21 +36,21 @@ export default function Navigator() {
   return (
     <div style={sticky ? styles.sticky : styles.fixed} className="nav">
       <Link href="/" passHref>
-        <span className="linkbtn" style={{ borderBottom: "2px solid #343436" }}>
+        <span className="linkbtn" style={page === 'home' ? {borderBottom: '2px solid #343436'} : null}>
           Home
         </span>
       </Link>
-      <Link href="/travel" passHref>
-        <span className="linkbtn">Travel</span>
-      </Link>
+      {/* <Link href="/travel" passHref>
+        <span className="linkbtn" style={page === 'travel' ? {borderBottom: '2px solid #343436'} : null}>Travel</span>
+      </Link> */}
       <Link href="/photos" passHref>
-        <span className="linkbtn">Photos</span>
+        <span className="linkbtn" style={page === 'photos' ? {borderBottom: '2px solid #343436'} : null}>Photos</span>
       </Link>
       <Link href="/qa" passHref>
-        <span className="linkbtn">Q+A</span>
+        <span className="linkbtn" style={page === 'qa' ? {borderBottom: '2px solid #343436'} : null}>Q+A</span>
       </Link>
       <Link href="/registry" passHref>
-        <span className="linkbtn">Registry</span>
+        <span className="linkbtn" style={page === 'registry' ? {borderBottom: '2px solid #343436'} : null}>Registry</span>
       </Link>
     </div>
   );

@@ -53,7 +53,7 @@ export default function Home() {
         <p style={{ fontSize: "20px", color: "darkgrey", marginTop: 0 }}>
           BROOKINGS, OR
         </p>
-        <Navigator />
+        <Navigator page={'home'} />
         <div
           style={{
             position: "relative",

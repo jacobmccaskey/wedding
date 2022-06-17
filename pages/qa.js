@@ -1,12 +1,12 @@
-import { Container } from "react-bootstrap";
-import Link from "next/link";
+import Wrapper from '../components/wrapper';
+import Navigator from "../components/Navigator";
+
 export default function QA() {
   return (
-    <Container style={{ textAlign: "center", marginTop: "2rem" }}>
-      <h1>Coming Soon!</h1>{" "}
-      <Link href="/">
-        <a>Back To Home</a>
-      </Link>
-    </Container>
+    <Wrapper>
+      <div><h1>Q & A</h1></div>
+      <Navigator page={'qa'} />
+      <div><p>Coming Soon!</p></div>
+    </Wrapper>
   );
 }

@@ -1,11 +1,12 @@
-import { Container } from "react-bootstrap";
-import Link from "next/link";
+import Wrapper from '../components/wrapper';
+import Navigator from "../components/Navigator";
 
 export default function Registry() {
   return (
-    <Container style={{textAlign:'center', marginTop: '2rem'}}>
-      <h1>Coming Soon!</h1>
-      <Link href='/'><a>Back To Home</a></Link>
-    </Container>
+    <Wrapper>
+      <div><h1>Registry</h1></div>
+      <Navigator page={'registry'} />
+      <div><p>Coming Soon!</p></div>
+    </Wrapper>
   );
 }
