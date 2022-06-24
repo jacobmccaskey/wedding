@@ -46,7 +46,6 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* <h1 className={styles.description}>Mr. And Mrs. Spendin Money'</h1> */}
         <h1 style={{ marginBottom: "0.5rem" }} className="banner-txt">
           Jacob and Ashley McCaskey
         </h1>
