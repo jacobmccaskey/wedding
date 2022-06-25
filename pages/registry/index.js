@@ -123,7 +123,7 @@ export default function Registry() {
           header="Day on Gili Island"
           name={"price_1LEgJ0GfXTCVGAGqMC3lNMpq"}
           value={selection.price_1LEgJ0GfXTCVGAGqMC3lNMpq}
-          text="Boat ride from Lombok to Gili and back. Snorkling at Gili Trawangan and Gili Meno, and a bicycle ride around the island!"
+          text="Boat ride from Lombok to Gili and back. Snorkeling at Gili Trawangan and Gili Meno, and a bicycle ride around the island!"
           price="30"
           imagePath="/images/fish.jpeg"
           handleChange={handleChange}
@@ -150,7 +150,7 @@ export default function Registry() {
           count={10}
         />
         <Card
-          header="Snorkling"
+          header="Snorkeling"
           name={"price_1LEgEwGfXTCVGAGqTGIkBAnt"}
           value={selection.price_1LEgEwGfXTCVGAGqTGIkBAnt}
           text="Help Ashley live her best life."
