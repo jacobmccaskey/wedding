@@ -1,5 +1,5 @@
-import Wrapper from "../../components/wrapper";
-import Footer from "../../components/Footer";
+import Wrapper from "../components/wrapper";
+import Footer from "../components/Footer";
 import Link from "next/link";
 import Button from "@mui/material/Button";
 

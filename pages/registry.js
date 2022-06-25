@@ -1,5 +1,5 @@
-import Wrapper from "../../components/wrapper";
-import Navigator from "../../components/Navigator";
+import Wrapper from "../components/wrapper";
+import Navigator from "../components/Navigator";
 import Image from "next/image";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import Select from "@mui/material/Select";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Input from "@mui/material/Input";
-import Footer from "../../components/Footer";
+import Footer from "../components/Footer";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
