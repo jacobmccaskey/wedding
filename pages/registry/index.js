@@ -23,7 +23,7 @@ const styles = {
     paddingTop: "1rem",
     // border: "1x solid darkgrey",
     // borderRadius: "3px",
-    minHeight: "100vh",
+    minHeight: "90vh",
     marginLeft: "1rem",
     marginRight: "1rem",
   },

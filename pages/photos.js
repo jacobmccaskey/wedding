@@ -8,9 +8,12 @@ import Link from 'next/link';
 export default function Photos() {
   return (
     <Wrapper>
+      <div style={{minHeight: '85vh'}}>
       <div><h1>Photos</h1></div>
       <Navigator page={'photos'} />
-      <ImageContainer />
+      {/* <ImageContainer /> */}
+      <h2>Coming Soon!!!</h2>
+      </div>
       <Footer />
     </Wrapper>
   );
