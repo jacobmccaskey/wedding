@@ -42,6 +42,7 @@ const styles = {
     display: "flex",
     maxWidth: "600px",
     margin: "auto",
+    minHeight: "111px",
     // border: "1px solid darkgrey",
     borderRadius: "8px",
     boxShadow: "0 3px 25px 0 rgb(48 55 66 / 5%)",
@@ -49,8 +50,10 @@ const styles = {
   },
   imageContainer: {
     width: "100%",
-    height: "100%",
+    height: "111px",
     position: "relative",
+    overflow: "hidden",
+    barderRadius: "5px",
     // textAlign: "left",
   },
 };
@@ -72,9 +75,9 @@ export default function Registry() {
         <hr style={{ maxWidth: "600px" }} />
         <p style={{ ...styles.text, fontSize: "18px" }}>
           Hello friends and family, We are honored you will share in our special
-          day! We&apos;re lucky to already have a home full of everything we need, so
-          please enjoy browsing our Honeyfund wish list, where you can
-          contribute funds to our dream honeymoon!
+          day! We&apos;re lucky to already have a home full of everything we
+          need, so please enjoy browsing our <i>Honeyfund</i> wish list, where you can
+          contribute to an experience for our dream honeymoon!
         </p>
         <CardWithInput
           header="Gift Any Amount"
@@ -86,14 +89,87 @@ export default function Registry() {
           handleChange={handleChange}
         />
         <Card
-          header="Dinner for Two"
-          name={"price_1LEYzJGfXTCVGAGqXyGo26g9"}
-          value={selection.price_1LEYzJGfXTCVGAGqXyGo26g9}
-          text="Buy us dinner!!!"
-          price="80"
-          imagePath="/images/present.jpeg"
+          header="First Class Upgrade"
+          name={"price_1LEgLfGfXTCVGAGqEgmMaLmt"}
+          value={selection.price_1LEgLfGfXTCVGAGqEgmMaLmt}
+          text="Help us upgrade to first class! We all know how  flying can be"
+          price="30"
+          imagePath="/images/airplane.jpeg"
           handleChange={handleChange}
+          count={4}
         />
+
+        <Card
+          header="Romantic Dinner for Two"
+          name={"price_1LEgKjGfXTCVGAGqRVgth8kt"}
+          value={selection.price_1LEgKjGfXTCVGAGqRVgth8kt}
+          text="Contribute to a unique culinary experience."
+          price="40"
+          imagePath="/images/dinner.jpeg"
+          handleChange={handleChange}
+          count={5}
+        />
+        <Card
+          header="Couples Massage"
+          name={"price_1LEgJuGfXTCVGAGqrCbYseO2"}
+          value={selection.price_1LEgJuGfXTCVGAGqrCbYseO2}
+          text="Help us relax."
+          price="15"
+          imagePath="/images/message.jpeg"
+          handleChange={handleChange}
+          count={14}
+        />
+        <Card
+          header="Day on Gili Island"
+          name={"price_1LEgJ0GfXTCVGAGqMC3lNMpq"}
+          value={selection.price_1LEgJ0GfXTCVGAGqMC3lNMpq}
+          text="Boat ride from Lombok to Gili and back. Snorkling at Gili Trawangan and Gili Meno, and a bicycle ride around the island!"
+          price="30"
+          imagePath="/images/fish.jpeg"
+          handleChange={handleChange}
+          count={10}
+        />
+        <Card
+          header="Doggy Daycare"
+          name={"price_1LEgHvGfXTCVGAGqEoQiv1YR"}
+          value={selection.price_1LEgHvGfXTCVGAGqEoQiv1YR}
+          text="Help our sweet puppy feel safe while we are away."
+          price="20"
+          imagePath="/images/dog.png"
+          handleChange={handleChange}
+          count={12}
+        />
+        <Card
+          header="Local Driver"
+          name={"price_1LEgGIGfXTCVGAGqrEMdlclf"}
+          value={selection.price_1LEgGIGfXTCVGAGqrEMdlclf}
+          text="Help us live in the fast lane."
+          price="15"
+          imagePath="/images/car.jpeg"
+          handleChange={handleChange}
+          count={10}
+        />
+        <Card
+          header="Snorkling"
+          name={"price_1LEgEwGfXTCVGAGqTGIkBAnt"}
+          value={selection.price_1LEgEwGfXTCVGAGqTGIkBAnt}
+          text="Help Ashley live her best life."
+          price="20"
+          imagePath="/images/snorkling.png"
+          handleChange={handleChange}
+          count={4}
+        />
+        <Card
+          header="Honeymoon Resort Stay"
+          name={"price_1LEgOGGfXTCVGAGqWGrz6fsI"}
+          value={selection.price_1LEgOGGfXTCVGAGqWGrz6fsI}
+          text="Contribute to our romantic getaway."
+          price="30"
+          imagePath="/images/resort.jpeg"
+          handleChange={handleChange}
+          count={15}
+        />
+
         <CheckoutContainer
           selection={selection}
           loading={loading}
@@ -110,6 +186,9 @@ const CheckoutContainer = ({ selection, loading, setLoading }) => {
     let lineItems = [];
     for (const itemKey in selection) {
       if (selection[itemKey] && +selection[itemKey] !== 0) {
+        try {
+          selection[itemKey] = selection[itemKey].split(".")[0];
+        } catch (err) {}
         lineItems.push({ price: itemKey, quantity: +selection[itemKey] });
       }
     }
@@ -156,20 +235,30 @@ const Card = ({
   value,
   handleChange,
   name,
+  count,
 }) => {
+  let menuItemsJSX = [];
+  let a = 0;
+  while (a <= count) {
+    menuItemsJSX.push(<MenuItem value={a}>{a}</MenuItem>);
+    a = a + 1;
+  }
+
   return (
     <div style={styles.card}>
       {/* picture container */}
       <div style={{ flex: 9, textAlign: "left" }}>
         <div style={{ display: "flex" }}>
           <div style={{ flex: 1 }}>
-            <div style={{ ...styles.imageContainer }}>
+            <div style={{ ...styles.imageContainer, height: "111px" }}>
               <Image
                 src={imagePath}
                 alt="cover"
                 layout="fill"
                 objectFit="contain"
-                // blurDataURL="true"
+                blurDataURL
+                placeholder="blur"
+                style={{ borderRadius: "5px" }}
               />
             </div>
           </div>
@@ -212,12 +301,7 @@ const Card = ({
             // label="amount"
             onChange={handleChange}
           >
-            <MenuItem value={0}>0</MenuItem>
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4</MenuItem>
-            <MenuItem value={5}>5</MenuItem>
+            {menuItemsJSX}
           </Select>
         </FormControl>
         {/* </Box> */}

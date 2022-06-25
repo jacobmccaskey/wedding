@@ -69,6 +69,8 @@ export default function Home() {
             // width={'100%'}
             layout="fill"
             objectFit="contain"
+            placeholder="blur"
+            blurDataURL
           />
         </div>
         <h2
