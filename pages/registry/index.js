@@ -1,14 +1,13 @@
-import Wrapper from "../components/wrapper";
-import Navigator from "../components/Navigator";
+import Wrapper from "../../components/wrapper";
+import Navigator from "../../components/Navigator";
 import Image from "next/image";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
 import Select from "@mui/material/Select";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Input from "@mui/material/Input";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -33,9 +32,9 @@ const styles = {
   },
   text: {
     color: "black",
-    maxWidth: '600px', 
-    margin: 'auto',
-    paddingBottom: '1rem'
+    maxWidth: "600px",
+    margin: "auto",
+    paddingBottom: "1rem",
     // marginLeft: "1rem",
     // marginRight: "1rem",
   },
@@ -70,10 +69,10 @@ export default function Registry() {
       <Navigator page={"registry"} />
       <div style={styles.container}>
         <h2 style={{ ...styles.text, color: "darkgrey" }}>J&A</h2>
-        <hr style={{maxWidth: '600px'}} />
+        <hr style={{ maxWidth: "600px" }} />
         <p style={{ ...styles.text, fontSize: "18px" }}>
           Hello friends and family, We are honored you will share in our special
-          day! We're lucky to already have a home full of everything we need, so
+          day! We&apos;re lucky to already have a home full of everything we need, so
           please enjoy browsing our Honeyfund wish list, where you can
           contribute funds to our dream honeymoon!
         </p>
@@ -115,7 +114,7 @@ const CheckoutContainer = ({ selection, loading, setLoading }) => {
       }
     }
     if (!lineItems.length) {
-      console.log('rejecting sale');
+      console.log("rejecting sale");
       return setLoading(false);
       //display error
     }
@@ -123,7 +122,7 @@ const CheckoutContainer = ({ selection, loading, setLoading }) => {
     const { error } = await stripe.redirectToCheckout({
       lineItems: lineItems,
       mode: "payment",
-      successUrl: window.location.href + '/success',
+      successUrl: window.location.href + "/success",
       cancelUrl: window.location.href,
     });
     if (error) {
