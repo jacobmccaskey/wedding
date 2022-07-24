@@ -2,6 +2,7 @@
 // import { useAppContext } from "../StateManager";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Collapse } from "@mui/material";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navigator(props) {
@@ -24,6 +25,7 @@ export default function Navigator(props) {
     window.addEventListener("scroll", isSticky);
     return () => window.removeEventListener("scroll", isSticky);
   }, []);
+  const getStickyAndTransform = () => {};
   const isSticky = () => {
     try {
       let div = document.querySelector(".nav");
@@ -35,8 +37,15 @@ export default function Navigator(props) {
   };
   return (
     <div style={sticky ? styles.sticky : styles.fixed} className="nav">
+      <Collapse in={sticky}>
+        <div style={{ height: "0.3rem" }}></div>
+      </Collapse>
+
       <Link href="/" passHref>
-        <span className="linkbtn" style={page === 'home' ? {borderBottom: '2px solid #343436'} : null}>
+        <span
+          className="linkbtn"
+          style={page === "home" ? { borderBottom: "2px solid #343436" } : null}
+        >
           Home
         </span>
       </Link>
@@ -44,14 +53,37 @@ export default function Navigator(props) {
         <span className="linkbtn" style={page === 'travel' ? {borderBottom: '2px solid #343436'} : null}>Travel</span>
       </Link> */}
       <Link href="/photos" passHref>
-        <span className="linkbtn" style={page === 'photos' ? {borderBottom: '2px solid #343436'} : null}>Photos</span>
+        <span
+          className="linkbtn"
+          style={
+            page === "photos" ? { borderBottom: "2px solid #343436" } : null
+          }
+        >
+          Photos
+        </span>
       </Link>
       <Link href="/qa" passHref>
-        <span className="linkbtn" style={page === 'qa' ? {borderBottom: '2px solid #343436'} : null}>Q+A</span>
+        <span
+          className="linkbtn"
+          style={page === "qa" ? { borderBottom: "2px solid #343436" } : null}
+        >
+          Q+A
+        </span>
       </Link>
       <Link href="/registry" passHref>
-        <span className="linkbtn" style={page === 'registry' ? {borderBottom: '2px solid #343436'} : null}>Registry</span>
+        <span
+          className="linkbtn"
+          style={
+            page === "registry" ? { borderBottom: "2px solid #343436" } : null
+          }
+        >
+          Registry
+        </span>
       </Link>
+
+      <Collapse in={sticky}>
+        <div style={{ height: "0.3rem" }}></div>
+      </Collapse>
     </div>
   );
 }

@@ -10,6 +10,7 @@ import Input from "@mui/material/Input";
 import Footer from "../../components/Footer";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import EmailProvider from "../../components/EmailProvider";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
@@ -79,6 +80,7 @@ export default function Registry() {
           need, so please enjoy browsing our <i>Honeyfund</i> wish list, where you can
           contribute to an experience for our dream honeymoon!
         </p>
+        <EmailProvider />
         <CardWithInput
           header="Gift Any Amount"
           text="Enter the amount you'd like to give"
