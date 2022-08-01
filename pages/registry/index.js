@@ -14,7 +14,7 @@ import EmailProvider from "../../components/EmailProvider";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
-  "pk_test_51LEXi5GfXTCVGAGqu1Z56KT8CrPHK2OYQwO9GwTJhE1d4Qm8DHmFQd172teDQRYUecDLylfDyaaaWzNuNT2SAYHx00qBhFDxfZ"
+  "pk_live_51LEXi5GfXTCVGAGqIcx7ErN4pfP9UxOCnnqzLZMBdzrR7p2fj2AdgqeyBQ8TeDbQHKJKq2l0447wLOrkzFbzbrXm00hvExJSIZ"
 );
 
 const styles = {
@@ -85,15 +85,15 @@ export default function Registry() {
           header="Gift Any Amount"
           text="Enter the amount you'd like to give"
           price="0"
-          name="price_1LEYTjGfXTCVGAGqeanEyYXO"
+          name="price_1LS51QGfXTCVGAGqfgxFEJAs"
           imagePath="/images/present.jpeg"
-          value={selection.price_1LEYTjGfXTCVGAGqeanEyYXO}
+          value={selection.price_1LS51QGfXTCVGAGqfgxFEJAs}
           handleChange={handleChange}
         />
         <Card
           header="First Class Upgrade"
-          name={"price_1LEgLfGfXTCVGAGqEgmMaLmt"}
-          value={selection.price_1LEgLfGfXTCVGAGqEgmMaLmt}
+          name={"price_1LS4zUGfXTCVGAGquDU0WuFX"}
+          value={selection.price_1LS4zUGfXTCVGAGquDU0WuFX}
           text="Help us upgrade to first class! We all know how  flying can be"
           price="30"
           imagePath="/images/airplane.jpeg"
@@ -103,8 +103,8 @@ export default function Registry() {
 
         <Card
           header="Romantic Dinner for Two"
-          name={"price_1LEgKjGfXTCVGAGqRVgth8kt"}
-          value={selection.price_1LEgKjGfXTCVGAGqRVgth8kt}
+          name={"price_1LS4zfGfXTCVGAGqX47B2d8h"}
+          value={selection.price_1LS4zfGfXTCVGAGqX47B2d8h}
           text="Contribute to a unique culinary experience."
           price="40"
           imagePath="/images/dinner.jpeg"
@@ -113,8 +113,8 @@ export default function Registry() {
         />
         <Card
           header="Couples Massage"
-          name={"price_1LEgJuGfXTCVGAGqrCbYseO2"}
-          value={selection.price_1LEgJuGfXTCVGAGqrCbYseO2}
+          name={"price_1LS4znGfXTCVGAGqSqgVKV3U"}
+          value={selection.price_1LS4znGfXTCVGAGqSqgVKV3U}
           text="Help us relax."
           price="15"
           imagePath="/images/message.jpeg"
@@ -123,8 +123,8 @@ export default function Registry() {
         />
         <Card
           header="Day on Gili Island"
-          name={"price_1LEgJ0GfXTCVGAGqMC3lNMpq"}
-          value={selection.price_1LEgJ0GfXTCVGAGqMC3lNMpq}
+          name={"price_1LS517GfXTCVGAGqFgaiM7Q2"}
+          value={selection.price_1LS517GfXTCVGAGqFgaiM7Q2}
           text="Boat ride from Lombok to Gili and back. Snorkeling at Gili Trawangan and Gili Meno, and a bicycle ride around the island!"
           price="30"
           imagePath="/images/fish.jpeg"
@@ -133,8 +133,8 @@ export default function Registry() {
         />
         <Card
           header="Doggy Daycare"
-          name={"price_1LEgHvGfXTCVGAGqEoQiv1YR"}
-          value={selection.price_1LEgHvGfXTCVGAGqEoQiv1YR}
+          name={"price_1LS51EGfXTCVGAGqOPTBkXDz"}
+          value={selection.price_1LS51EGfXTCVGAGqOPTBkXDz}
           text="Help our sweet puppy feel safe while we are away."
           price="20"
           imagePath="/images/dog.png"
@@ -143,8 +143,8 @@ export default function Registry() {
         />
         <Card
           header="Local Driver"
-          name={"price_1LEgGIGfXTCVGAGqrEMdlclf"}
-          value={selection.price_1LEgGIGfXTCVGAGqrEMdlclf}
+          name={"price_1LS51JGfXTCVGAGq0WWx22tO"}
+          value={selection.price_1LS51JGfXTCVGAGq0WWx22tO}
           text="Help us live in the fast lane."
           price="15"
           imagePath="/images/car.jpeg"
@@ -153,8 +153,8 @@ export default function Registry() {
         />
         <Card
           header="Snorkeling"
-          name={"price_1LEgEwGfXTCVGAGqTGIkBAnt"}
-          value={selection.price_1LEgEwGfXTCVGAGqTGIkBAnt}
+          name={"price_1LEg7QGfXTCVGAGqATBWofR7"}
+          value={selection.price_1LEg7QGfXTCVGAGqATBWofR7}
           text="Help Ashley live her best life."
           price="20"
           imagePath="/images/snorkling.png"
@@ -163,8 +163,8 @@ export default function Registry() {
         />
         <Card
           header="Honeymoon Resort Stay"
-          name={"price_1LEgOGGfXTCVGAGqWGrz6fsI"}
-          value={selection.price_1LEgOGGfXTCVGAGqWGrz6fsI}
+          name={"price_1LEhD3GfXTCVGAGq40gk4sqU"}
+          value={selection.price_1LEhD3GfXTCVGAGq40gk4sqU}
           text="Contribute to our romantic getaway."
           price="30"
           imagePath="/images/resort.jpeg"

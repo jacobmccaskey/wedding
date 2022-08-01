@@ -1,26 +1,40 @@
+import { useRef } from 'react';
 import { Button } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
-
+import emailjs from "@emailjs/browser";
 import { useState, Fragment } from "react";
 import { TextareaAutosize } from "@mui/base";
-import Collapse from '@mui/material/Collapse';
-import Grow from '@mui/material/Grow';
+import Collapse from "@mui/material/Collapse";
+import Grow from "@mui/material/Grow";
+const PUBLIC_KEY = "user_fU2I16AUegqrB9U5h5Hx1";
 
 const EmailProvider = () => {
   const [showTextArea, setShowTextArea] = useState(false);
   const [showSuccessMessage, setShowSucessMessage] = useState(false);
   const [spinner, setSpinner] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
+  const form = useRef();
   const showTextBlock = () => {
     setShowTextArea(!showTextArea);
   };
-  const handleSend = async () => {
+  const handleSend = async (e) => {
+    e.preventDefault();
     setSpinner(true);
-    console.log('handleSend');
+    console.log("handleSend");
+    try {
+      await emailjs.sendForm(
+        "gmail",
+        "template_NGLdFCtJ",
+        form.current,
+        PUBLIC_KEY
+      );
+    } catch (error) {
+      console.log("emailProvider", error);
+    }
     setShowTextArea(!showTextArea);
     setShowSucessMessage(true);
     setSpinner(false);
-  }
+  };
   return (
     <div
       style={{
@@ -54,29 +68,32 @@ const EmailProvider = () => {
         write us a message
       </Button>
       <Collapse in={showTextArea}>
-        <TextareaAutosize
-          minRows={12}
-          style={{ width: "100%" }}
-          aria-label="textarea"
-          value={message}
-          onChange={(e)=> setMessage(e.target.value) }
-        />
-        <LoadingButton
-          variant="outlined"
-          size="small"
-          style={{
-            borderColor: "#93CAED",
-            color: "#93CAED",
-            width: "100%",
-            margin: "auto",
-          }}
-          onClick={handleSend}
-          loading={spinner}
-          loadingPosition="end"
-  
-        >
-          Send
-        </LoadingButton>
+        <form onSubmit={handleSend} ref={form}>
+          <TextareaAutosize
+            minRows={12}
+            style={{ width: "100%" }}
+            aria-label="textarea"
+            value={message}
+            name='message'
+            onChange={(e) => setMessage(e.target.value)}
+          />
+          <LoadingButton
+            variant="outlined"
+            size="small"
+            style={{
+              borderColor: "#93CAED",
+              color: "#93CAED",
+              width: "100%",
+              margin: "auto",
+            }}
+            // onClick={handleSend}
+            loading={spinner}
+            type='submit'
+            loadingPosition="end"
+          >
+            Send
+          </LoadingButton>
+        </form>
       </Collapse>
 
       <p>
