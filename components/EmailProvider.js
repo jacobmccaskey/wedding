@@ -107,6 +107,7 @@ const EmailProvider = () => {
           color: "darkgrey",
           width: "170px",
         }}
+        onClick={()=> window.open(`mailto:mccaskey316@gmail.com?subject=Address Request&body=Please provide your full name and contact information`)}
       >
         Request Address
       </Button>
