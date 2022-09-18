@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 import { Button } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import emailjs from "@emailjs/browser";
@@ -74,7 +74,7 @@ const EmailProvider = () => {
             style={{ width: "100%" }}
             aria-label="textarea"
             value={message}
-            name='message'
+            name="message"
             onChange={(e) => setMessage(e.target.value)}
           />
           <LoadingButton
@@ -88,7 +88,7 @@ const EmailProvider = () => {
             }}
             // onClick={handleSend}
             loading={spinner}
-            type='submit'
+            type="submit"
             loadingPosition="end"
           >
             Send
@@ -107,7 +107,11 @@ const EmailProvider = () => {
           color: "darkgrey",
           width: "170px",
         }}
-        onClick={()=> window.open(`mailto:mccaskey316@gmail.com?subject=Address Request&body=Please provide your full name and contact information`)}
+        onClick={() =>
+          window.open(
+            `mailto:mccaskey316@gmail.com?subject=Address Request&body=Please provide your full name and contact information`
+          )
+        }
       >
         Request Address
       </Button>

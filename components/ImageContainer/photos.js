@@ -1,28 +1,109 @@
-const relativePath = "images/";
+const relativePath = "/images/gallery/";
 export const photos = [
   {
-    src: 'images/holding.jpg',
+    src: relativePath + "a1.jpg",
     width: 1,
     height: 1,
   },
   {
-    src: relativePath + "cover.jpg",
+    src: relativePath + "a2.jpg",
     width: 1,
     height: 1,
   },
   {
-    src: relativePath + "sunset.jpg",
+    src: relativePath + "a3.jpg",
     width: 1,
     height: 1,
   },
   {
-    src: relativePath + "together.jpg",
+    src: relativePath + "b1.jpg",
     width: 1,
     height: 1,
   },
   {
-    src: relativePath + "walking.jpg",
+    src: relativePath + "b2.jpg",
     width: 1,
     height: 1,
   },
+  {
+    src: relativePath + "b3.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "c1.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "c2.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "c3.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "d1.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "d2.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "d3.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "f1.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "f2.jpg",
+    width: 1,
+    height: 1,
+  },
+  // {
+  //   src: relativePath + "f3.jpg",
+  //   width: 1,
+  //   height: 1,
+  // },
+  {
+    src: relativePath + "g1.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "g2.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "g3.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "h1.jpg",
+    width: 1,
+    height: 1,
+  },
+
+  // {
+  //   src: relativePath + "together.jpg",
+  //   width: 1,
+  //   height: 1,
+  // },
+  // {
+  //   src: relativePath + "walking.jpg",
+  //   width: 1,
+  //   height: 1,
+  // },
 ];

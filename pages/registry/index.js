@@ -11,6 +11,7 @@ import Footer from "../../components/Footer";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import EmailProvider from "../../components/EmailProvider";
+import Header from "../../components/Header";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
@@ -40,10 +41,11 @@ const styles = {
     // marginRight: "1rem",
   },
   card: {
-    display: "flex",
+    // display: "flex",
     maxWidth: "600px",
     margin: "auto",
-    minHeight: "111px",
+    minHeight: "115px",
+    padding: "20px",
     // border: "1px solid darkgrey",
     borderRadius: "8px",
     boxShadow: "0 3px 25px 0 rgb(48 55 66 / 5%)",
@@ -51,7 +53,7 @@ const styles = {
   },
   imageContainer: {
     width: "100%",
-    height: "111px",
+    height: "110px",
     position: "relative",
     overflow: "hidden",
     barderRadius: "5px",
@@ -67,9 +69,7 @@ export default function Registry() {
   };
   return (
     <Wrapper>
-      <div>
-        <h1>Registry</h1>
-      </div>
+      <Header />
       <Navigator page={"registry"} />
       <div style={styles.container}>
         <h2 style={{ ...styles.text, color: "darkgrey" }}>J&A</h2>
@@ -77,8 +77,8 @@ export default function Registry() {
         <p style={{ ...styles.text, fontSize: "18px" }}>
           Hello friends and family, We are honored you will share in our special
           day! We&apos;re lucky to already have a home full of everything we
-          need, so please enjoy browsing our <i>Honeyfund</i> wish list, where you can
-          contribute to an experience for our dream honeymoon!
+          need, so please enjoy browsing our <i>Honeyfund</i> wish list, where
+          you can contribute to an experience for our dream honeymoon!
         </p>
         <EmailProvider />
         <CardWithInput
@@ -248,53 +248,59 @@ const Card = ({
 
   return (
     <div style={styles.card}>
-      {/* picture container */}
-      <div style={{ flex: 9, textAlign: "left" }}>
-        <div style={{ display: "flex" }}>
-          <div style={{ flex: 1 }}>
-            <div style={{ ...styles.imageContainer, height: "111px" }}>
-              <Image
-                src={imagePath}
-                alt="cover"
-                layout="fill"
-                objectFit="contain"
-                blurDataURL
-                placeholder="blur"
-                style={{ borderRadius: "5px" }}
-              />
+      <div style={{ display: "flex" }}>
+        {/* picture container */}
+        <div style={{ flex: 9, textAlign: "left" }}>
+          <div style={{ display: "flex" }}>
+            <div style={{ flex: 2 }}>
+              <div
+                style={{
+                  ...styles.imageContainer,
+                  padding: '4.7rem',
+                }}
+              >
+                <Image
+                  src={imagePath}
+                  alt="cover"
+                  layout="fill"
+                  objectFit="contain"
+                  blurDataURL
+                  placeholder="blur"
+                  style={{ borderRadius: "5px" }}
+                />
+              </div>
+            </div>
+            {/* info container */}
+            <div style={{ flex: 2, marginLeft: "1rem" }}>
+              <p style={{ fontSize: "20px", margin: 0 }}>{header}</p>
+              <p style={{ color: "darkgrey", margin: "5px 0 0 0" }}>{text}</p>
+              <p
+                style={{
+                  color: "darkgrey",
+                  // textDecoration: "underline",
+                  fontSize: "20px",
+                  margin: "5px 0 0 0",
+                }}
+              >
+                ${price}
+              </p>
             </div>
           </div>
-          {/* info container */}
-          <div style={{ flex: 2, marginLeft: "1rem" }}>
-            <p style={{ fontSize: "20px", margin: 0 }}>{header}</p>
-            <p style={{ color: "darkgrey", margin: "5px 0 0 0" }}>{text}</p>
-            <p
-              style={{
-                color: "darkgrey",
-                // textDecoration: "underline",
-                fontSize: "20px",
-                margin: "5px 0 0 0",
-              }}
-            >
-              ${price}
-            </p>
-          </div>
         </div>
+        {/* price and checkout container */}
       </div>
-      {/* price and checkout container */}
       <div
         style={{
-          flex: 3,
+          // flex: 3,
           fontWeight: 600,
           fontSize: "20px",
-          textAlign: "center",
+          textAlign: "right",
           verticalAlign: "middle",
           marginTop: "1rem",
           // color: "darkgrey",
         }}
       >
         <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
-          {/* <InputLabel id="demo-simple-select-label">Amount</InputLabel> */}
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -306,7 +312,6 @@ const Card = ({
             {menuItemsJSX}
           </Select>
         </FormControl>
-        {/* </Box> */}
       </div>
     </div>
   );
@@ -323,61 +328,60 @@ const CardWithInput = ({
 }) => {
   return (
     <div style={styles.card}>
-      {/* picture container */}
-      <div style={{ flex: 9, textAlign: "left" }}>
-        <div style={{ display: "flex" }}>
-          <div style={{ flex: 1 }}>
-            <div style={{ ...styles.imageContainer }}>
-              <Image
-                src={imagePath}
-                alt="cover"
-                layout="fill"
-                objectFit="contain"
-                // blurDataURL="true"
-              />
+      <div style={{ display: "flex" }}>
+        {/* picture container */}
+        <div style={{ flex: 9, textAlign: "left" }}>
+          <div style={{ display: "flex" }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ ...styles.imageContainer }}>
+                <Image
+                  src={imagePath}
+                  alt="cover"
+                  layout="fill"
+                  objectFit="contain"
+                  // blurDataURL="true"
+                />
+              </div>
+            </div>
+            {/* info container */}
+            <div style={{ flex: 2, marginLeft: "1rem" }}>
+              <p style={{ fontSize: "20px", margin: 0 }}>{header}</p>
+              <p style={{ color: "darkgrey", margin: "5px 0 0 0" }}>{text}</p>
+              <p
+                style={{
+                  color: "darkgrey",
+                  // textDecoration: "underline",
+                  fontSize: "20px",
+                  margin: "5px 0 0 0",
+                }}
+              >
+                {/* ${price} */}
+              </p>
             </div>
           </div>
-          {/* info container */}
-          <div style={{ flex: 2, marginLeft: "1rem" }}>
-            <p style={{ fontSize: "20px", margin: 0 }}>{header}</p>
-            <p style={{ color: "darkgrey", margin: "5px 0 0 0" }}>{text}</p>
-            <p
-              style={{
-                color: "darkgrey",
-                // textDecoration: "underline",
-                fontSize: "20px",
-                margin: "5px 0 0 0",
-              }}
-            >
-              {/* ${price} */}
-            </p>
-          </div>
         </div>
+        <div
+          style={{
+            flex: 3,
+            fontWeight: 600,
+            fontSize: "20px",
+            textAlign: "center",
+            verticalAlign: "middle",
+            marginTop: "1rem",
+            // color: "darkgrey",
+          }}
+        ></div>
       </div>
-      <div
-        style={{
-          flex: 3,
-          fontWeight: 600,
-          fontSize: "20px",
-          textAlign: "center",
-          verticalAlign: "middle",
-          marginTop: "1rem",
-          // color: "darkgrey",
-        }}
-      >
-        <Box
-          sx={{ m: 1, width: 100, textAlign: "center", margin: "auto" }}
-          size="small"
-        >
+      <div style={{ textAlign: "right", position:'relative', width:'100%' }}>
           <Input
             variant="outlined"
             startAdornment="$"
+            size="small"
             name={name}
             value={value}
             type="number"
             onChange={handleChange}
           />
-        </Box>
       </div>
     </div>
   );

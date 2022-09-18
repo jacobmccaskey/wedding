@@ -1,6 +1,7 @@
 import Wrapper from "../components/wrapper";
 import Navigator from "../components/Navigator";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const styles = {
   container: { textAlign: "left", margin: 25 },
@@ -17,11 +18,8 @@ export default function QA() {
   return (
     <Wrapper>
       <div style={{ minHeight: "85vh" }}>
-        <div>
-          <h1>Q & A</h1>
-        </div>
+        <Header />
         <Navigator page={"qa"} />
-        {/* <div><p>Coming Soon!</p></div> */}
         <Card
           header="Are We Invited?"
           text={`We will contact you with details regarding the ceremony and whats involved.
@@ -36,11 +34,11 @@ export default function QA() {
         />
         <Card
           header="What lodging is available in the area?"
-          text={`Okay seriously this is getting old. You are not going.`}
+          text={`We are staying in the Brooking, OR area about 20 minutes from the Redwoods National forest. We will update this section later as we do more research.`}
         />
         <Card
           header="When is it?"
-          text={`June 8, 2023. Let us know if you plan on going so we can change our date the week before and leave you high and dry with a non refundable plane ticket. God Bless!`}
+          text={`June 8, 2023.`}
         />
       </div>
       <Footer />
