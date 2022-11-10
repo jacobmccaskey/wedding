@@ -40,27 +40,12 @@ export default function ImageContainer() {
                   objectFit="contain"
                   placeholder="blur"
                   blurDataURL
-                  onClick={(e) => console.log(e)}
                 />
               </div>
             </Grid>
           );
         })}
       </Grid>
-      {/* <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImage}
-              views={photos.map((x) => ({
-                ...x,
-                srcset: x.srcSet,
-                caption: x.title,
-              }))}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway> */}
     </div>
   );
 }

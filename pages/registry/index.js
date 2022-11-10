@@ -3,7 +3,10 @@ import Navigator from "../../components/Navigator";
 import Image from "next/image";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Box from "@mui/material/Box";
+import {
+  Card as MuiCard,
+  Typography,
+} from "@mui/material";
 import Select from "@mui/material/Select";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Input from "@mui/material/Input";
@@ -20,10 +23,7 @@ const stripePromise = loadStripe(
 
 const styles = {
   container: {
-    // textAlign: "left",
     paddingTop: "1rem",
-    // border: "1x solid darkgrey",
-    // borderRadius: "3px",
     minHeight: "90vh",
     marginLeft: "1rem",
     marginRight: "1rem",
@@ -37,27 +37,17 @@ const styles = {
     maxWidth: "600px",
     margin: "auto",
     paddingBottom: "1rem",
-    // marginLeft: "1rem",
-    // marginRight: "1rem",
   },
   card: {
-    // display: "flex",
     maxWidth: "600px",
     margin: "auto",
     minHeight: "115px",
-    padding: "20px",
-    // border: "1px solid darkgrey",
-    borderRadius: "8px",
-    boxShadow: "0 3px 25px 0 rgb(48 55 66 / 5%)",
-    marginBottom: "1rem",
   },
   imageContainer: {
     width: "100%",
-    height: "110px",
+    height: "150px",
     position: "relative",
-    overflow: "hidden",
-    barderRadius: "5px",
-    // textAlign: "left",
+    textAlign: "left",
   },
 };
 
@@ -81,20 +71,22 @@ export default function Registry() {
           you can contribute to an experience for our dream honeymoon!
         </p>
         <EmailProvider />
-        <CardWithInput
+        <Card
           header="Gift Any Amount"
-          text="Enter the amount you'd like to give"
-          price="0"
+          text="Enter any amount you'd like to give"
+          price={null}
           name="price_1LS51QGfXTCVGAGqfgxFEJAs"
           imagePath="/images/present.jpeg"
           value={selection.price_1LS51QGfXTCVGAGqfgxFEJAs}
           handleChange={handleChange}
+          count={null}
         />
+
         <Card
           header="First Class Upgrade"
           name={"price_1LS4zUGfXTCVGAGquDU0WuFX"}
           value={selection.price_1LS4zUGfXTCVGAGquDU0WuFX}
-          text="Help us upgrade to first class! We all know how  flying can be"
+          text="Help us upgrade to first class! We all know how  flying can be."
           price="30"
           imagePath="/images/airplane.jpeg"
           handleChange={handleChange}
@@ -242,21 +234,24 @@ const Card = ({
   let menuItemsJSX = [];
   let a = 0;
   while (a <= count) {
-    menuItemsJSX.push(<MenuItem value={a}>{a}</MenuItem>);
+    menuItemsJSX.push(
+      <MenuItem value={a} key={a}>
+        {a}
+      </MenuItem>
+    );
     a = a + 1;
   }
 
   return (
-    <div style={styles.card}>
+    <MuiCard style={{ ...styles.card, marginBottom: "1rem" }} raised>
       <div style={{ display: "flex" }}>
         {/* picture container */}
-        <div style={{ flex: 9, textAlign: "left" }}>
+        <div style={{ flex: 9, textAlign: "left", marginTop: "1rem" }}>
           <div style={{ display: "flex" }}>
             <div style={{ flex: 2 }}>
               <div
                 style={{
                   ...styles.imageContainer,
-                  padding: '4.7rem',
                 }}
               >
                 <Image
@@ -266,14 +261,32 @@ const Card = ({
                   objectFit="contain"
                   blurDataURL
                   placeholder="blur"
-                  style={{ borderRadius: "5px" }}
                 />
               </div>
             </div>
             {/* info container */}
             <div style={{ flex: 2, marginLeft: "1rem" }}>
-              <p style={{ fontSize: "20px", margin: 0 }}>{header}</p>
-              <p style={{ color: "darkgrey", margin: "5px 0 0 0" }}>{text}</p>
+              <Typography
+                sx={{ fontSize: 18 }}
+                textAlign={"left"}
+                marginRight={"10px"}
+                maxWidth={"170px"}
+                color="text.secondary"
+                gutterBottom
+              >
+                {header}
+              </Typography>
+
+              <Typography
+                sx={{ fontSize: 16 }}
+                textAlign={"left"}
+                marginRight={"10px"}
+                maxWidth={"170px"}
+                color="text.primary"
+                gutterBottom
+              >
+                {text}
+              </Typography>
               <p
                 style={{
                   color: "darkgrey",
@@ -282,7 +295,7 @@ const Card = ({
                   margin: "5px 0 0 0",
                 }}
               >
-                ${price}
+                {price ? `$${price}` : null}
               </p>
             </div>
           </div>
@@ -291,88 +304,26 @@ const Card = ({
       </div>
       <div
         style={{
-          // flex: 3,
           fontWeight: 600,
           fontSize: "20px",
           textAlign: "right",
           verticalAlign: "middle",
           marginTop: "1rem",
-          // color: "darkgrey",
         }}
       >
-        <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={value}
-            name={name}
-            // label="amount"
-            onChange={handleChange}
-          >
-            {menuItemsJSX}
-          </Select>
-        </FormControl>
-      </div>
-    </div>
-  );
-};
-
-const CardWithInput = ({
-  price,
-  text,
-  header,
-  imagePath,
-  value,
-  handleChange,
-  name,
-}) => {
-  return (
-    <div style={styles.card}>
-      <div style={{ display: "flex" }}>
-        {/* picture container */}
-        <div style={{ flex: 9, textAlign: "left" }}>
-          <div style={{ display: "flex" }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ ...styles.imageContainer }}>
-                <Image
-                  src={imagePath}
-                  alt="cover"
-                  layout="fill"
-                  objectFit="contain"
-                  // blurDataURL="true"
-                />
-              </div>
-            </div>
-            {/* info container */}
-            <div style={{ flex: 2, marginLeft: "1rem" }}>
-              <p style={{ fontSize: "20px", margin: 0 }}>{header}</p>
-              <p style={{ color: "darkgrey", margin: "5px 0 0 0" }}>{text}</p>
-              <p
-                style={{
-                  color: "darkgrey",
-                  // textDecoration: "underline",
-                  fontSize: "20px",
-                  margin: "5px 0 0 0",
-                }}
-              >
-                {/* ${price} */}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          style={{
-            flex: 3,
-            fontWeight: 600,
-            fontSize: "20px",
-            textAlign: "center",
-            verticalAlign: "middle",
-            marginTop: "1rem",
-            // color: "darkgrey",
-          }}
-        ></div>
-      </div>
-      <div style={{ textAlign: "right", position:'relative', width:'100%' }}>
+        {count ? (
+          <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={value}
+              name={name}
+              onChange={handleChange}
+            >
+              {menuItemsJSX}
+            </Select>
+          </FormControl>
+        ) : (
           <Input
             variant="outlined"
             startAdornment="$"
@@ -380,9 +331,12 @@ const CardWithInput = ({
             name={name}
             value={value}
             type="number"
+            style={{marginBottom: '1rem'}}
             onChange={handleChange}
           />
+        )}
       </div>
-    </div>
+    </MuiCard>
   );
 };
+
