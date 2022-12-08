@@ -34,7 +34,7 @@ export default function ImageContainer() {
                 style={{ position: "relative", width: "auto", height: "450px" }}
               >
                 <Image
-                  src={photo.src}
+                  src={photo.src + '?nf_resize=smartcrop&w=392&h=450'}
                   alt="cover"
                   layout="fill"
                   objectFit="contain"
