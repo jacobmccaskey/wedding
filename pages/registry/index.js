@@ -67,8 +67,8 @@ export default function Registry() {
         <p style={{ ...styles.text, fontSize: "18px" }}>
           Hello friends and family, We are honored you will share in our special
           day! We&apos;re lucky to already have a home full of everything we
-          need, so please enjoy browsing our <i>Honeyfund</i> wish list, where
-          you can contribute to an experience for our dream honeymoon!
+          need, so please enjoy browsing our <i>Experience</i> wish list, where
+          you can contribute to an excursion for our dream honeymoon!
         </p>
         <EmailProvider />
         <Card
