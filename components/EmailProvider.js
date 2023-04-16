@@ -46,13 +46,15 @@ const EmailProvider = () => {
       }}
     >
       <p>
-        We&apos;re eloping, so if you would like to send us a personalized message to read on the day of our ceremony,
-        we are providing the option to send one here! Just type one up and
-        hit submit (dont forget to include your name!), and your message will
-        appear in our inbox :)
+        We&apos;re eloping, so if you would like to send us a personalized
+        message to read on the day of our ceremony, we are providing the option
+        to send one here! Just type one up and hit submit (dont forget to
+        include your name!), and your message will appear in our inbox :)
       </p>
       <Grow in={showSuccessMessage}>
-        <h3>Thank you, your message has been sent!</h3>
+        <h3 style={{ lineHeight: !showSuccessMessage ? "0px" : "inherit" }}>
+          Thank you, your message has been sent!
+        </h3>
       </Grow>
       <Button
         variant="outlined"
