@@ -86,7 +86,7 @@ export default function Registry() {
           header="First Class Upgrade"
           name={"price_1LS4zUGfXTCVGAGquDU0WuFX"}
           value={selection.price_1LS4zUGfXTCVGAGquDU0WuFX}
-          text="Help us upgrade to first class! We all know how  flying can be."
+          text="Contribute to our upgrade to first class! We all know how flying can be."
           price="30"
           imagePath="/images/airplane.jpeg"
           handleChange={handleChange}
@@ -116,7 +116,7 @@ export default function Registry() {
           header="Couples Massage"
           name={"price_1LS4znGfXTCVGAGqSqgVKV3U"}
           value={selection.price_1LS4znGfXTCVGAGqSqgVKV3U}
-          text="Help us relax."
+          text="Contribute to our relaxation experience."
           price="15"
           imagePath="/images/message.jpeg"
           handleChange={handleChange}
@@ -126,7 +126,7 @@ export default function Registry() {
           header="Doggy Daycare"
           name={"price_1LS51EGfXTCVGAGqOPTBkXDz"}
           value={selection.price_1LS51EGfXTCVGAGqOPTBkXDz}
-          text="Help our sweet puppy feel safe while we are away."
+          text="Contribute to our sweet pup's experience while we are away."
           price="20"
           imagePath="/images/dog.png"
           handleChange={handleChange}
@@ -136,7 +136,7 @@ export default function Registry() {
           header="Local Driver"
           name={"price_1LS51JGfXTCVGAGq0WWx22tO"}
           value={selection.price_1LS51JGfXTCVGAGq0WWx22tO}
-          text="Help us live in the fast lane."
+          text="Gift us the privilege of living in the fast lane."
           price="15"
           imagePath="/images/car.jpeg"
           handleChange={handleChange}
