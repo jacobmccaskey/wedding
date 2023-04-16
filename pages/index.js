@@ -4,6 +4,7 @@ import Wrapper from "../components/wrapper";
 import { useState, useEffect } from "react";
 import { useAppContext } from "../StateManager";
 import Navigator from '../components/Navigator'
+import EmailProvider from "../components/EmailProvider";
 
 const weddingDate = new Date("Jun 8, 2023 15:00:00").getTime();
 
@@ -22,8 +23,8 @@ export default function Home() {
     <div>
       <Head>
         <title>Mr. And Mrs. McCaskey</title>
-        <meta name="description" content="McWedding App" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="McCaskey wedding App" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <Wrapper>
@@ -94,6 +95,7 @@ export default function Home() {
           JUNE 8, 2023
         </h3>
         <h2 style={state.isMobile ? {fontSize: '15px'} : null}>{countdown}</h2>
+        <EmailProvider />
         <div
           style={{
             padding: "0 18px 18px",

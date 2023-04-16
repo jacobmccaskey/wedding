@@ -92,7 +92,16 @@ export default function Registry() {
           handleChange={handleChange}
           count={4}
         />
-
+        <Card
+          header="Outdoor Excursion"
+          name={"price_1LS517GfXTCVGAGqFgaiM7Q2"}
+          value={selection.price_1LS517GfXTCVGAGqFgaiM7Q2}
+          text="Sunset cruises, helicopter rides, ATVS, scuba diving, etc."
+          price="30"
+          imagePath="/images/parasail.jpg"
+          handleChange={handleChange}
+          count={10}
+        />
         <Card
           header="Romantic Dinner for Two"
           name={"price_1LS4zfGfXTCVGAGqX47B2d8h"}
@@ -112,16 +121,6 @@ export default function Registry() {
           imagePath="/images/message.jpeg"
           handleChange={handleChange}
           count={14}
-        />
-        <Card
-          header="Day on Gili Island"
-          name={"price_1LS517GfXTCVGAGqFgaiM7Q2"}
-          value={selection.price_1LS517GfXTCVGAGqFgaiM7Q2}
-          text="Boat ride from Lombok to Gili and back. Snorkeling at Gili Trawangan and Gili Meno, and a bicycle ride around the island!"
-          price="30"
-          imagePath="/images/fish.jpeg"
-          handleChange={handleChange}
-          count={10}
         />
         <Card
           header="Doggy Daycare"
@@ -144,16 +143,6 @@ export default function Registry() {
           count={10}
         />
         <Card
-          header="Snorkeling"
-          name={"price_1LEg7QGfXTCVGAGqATBWofR7"}
-          value={selection.price_1LEg7QGfXTCVGAGqATBWofR7}
-          text="Help Ashley live her best life."
-          price="20"
-          imagePath="/images/snorkling.png"
-          handleChange={handleChange}
-          count={4}
-        />
-        <Card
           header="Honeymoon Resort Stay"
           name={"price_1LEhD3GfXTCVGAGq40gk4sqU"}
           value={selection.price_1LEhD3GfXTCVGAGq40gk4sqU}
@@ -163,7 +152,16 @@ export default function Registry() {
           handleChange={handleChange}
           count={15}
         />
-
+        <Card
+          header="Snorklin'"
+          name={"price_1LEg7QGfXTCVGAGqATBWofR7"}
+          value={selection.price_1LEg7QGfXTCVGAGqATBWofR7}
+          text="Help Ashley live her best life."
+          price="20"
+          imagePath="/images/snorkling.png"
+          handleChange={handleChange}
+          count={4}
+        />
         <CheckoutContainer
           selection={selection}
           loading={loading}

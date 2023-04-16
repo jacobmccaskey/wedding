@@ -47,7 +47,7 @@ const EmailProvider = () => {
     >
       <p>
         If you would like to send us a personalized message, we are providing
-        the option to send us one here! Just type one up here and hit submit,
+        the option to send us one here! Just type one up and hit submit (dont forget to include your name!),
         and your message will appear in our inbox :)
       </p>
       <Grow in={showSuccessMessage}>
