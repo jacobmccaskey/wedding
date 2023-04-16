@@ -29,12 +29,8 @@ export default function QA() {
                   coming to the ceremony will require a lot of travel.`}
         />
         <Card
-          header="What Travel is involved?"
-          text={`A lot, but let's be honest, you are not going anyway.`}
-        />
-        <Card
           header="What lodging is available in the area?"
-          text={`We are staying in the Brooking, OR area about 20 minutes from the Redwoods National forest. We will update this section later as we do more research.`}
+          text={`We are staying in the Brookings, OR area about 20 minutes from the Redwoods National forest.`}
         />
         <Card
           header="When is it?"

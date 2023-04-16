@@ -46,9 +46,10 @@ const EmailProvider = () => {
       }}
     >
       <p>
-        If you would like to send us a personalized message, we are providing
-        the option to send us one here! Just type one up and hit submit (dont forget to include your name!),
-        and your message will appear in our inbox :)
+        We&apos;re eloping, so if you would like to send us a personalized message to read on the day of our ceremony,
+        we are providing the option to send one here! Just type one up and
+        hit submit (dont forget to include your name!), and your message will
+        appear in our inbox :)
       </p>
       <Grow in={showSuccessMessage}>
         <h3>Thank you, your message has been sent!</h3>
