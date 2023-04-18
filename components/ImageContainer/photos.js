@@ -26,7 +26,7 @@ export const photos = [
     height: 1,
   },
   {
-    src: relativePath + "b3.jpg",
+    src: relativePath + "b3a.jpg",
     width: 1,
     height: 1,
   },
@@ -61,6 +61,16 @@ export const photos = [
     height: 1,
   },
   {
+    src: relativePath + "g3.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
+    src: relativePath + "h1.jpg",
+    width: 1,
+    height: 1,
+  },
+  {
     src: relativePath + "f1.jpg",
     width: 1,
     height: 1,
@@ -82,16 +92,6 @@ export const photos = [
   },
   {
     src: relativePath + "g2.jpg",
-    width: 1,
-    height: 1,
-  },
-  {
-    src: relativePath + "g3.jpg",
-    width: 1,
-    height: 1,
-  },
-  {
-    src: relativePath + "h1.jpg",
     width: 1,
     height: 1,
   },

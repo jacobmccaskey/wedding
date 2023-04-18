@@ -1,26 +1,30 @@
-import React, { useState, useCallback } from "react";
-import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import React, { useState} from "react";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
+import { SRLWrapper } from "simple-react-lightbox";
 import { photos } from "./photos";
-
+const lightboxOptions = {
+  caption : {showCaption: false},
+  buttons: {
+    backgroundColor: 'rgba(30,30,36,0.8)',
+    iconColor: 'rgba(255, 255, 255, 0.8)',
+    iconPadding: '5px',
+    showAutoplayButton: true,
+    showCloseButton: true,
+    showDownloadButton: false,
+    showFullscreenButton: true,
+    showNextButton: true,
+    showPrevButton: true,
+    showThumbnailsButton: false,
+    size: '25px'
+  },
+  thumbnails: {showThumbnails: false}
+}
 export default function ImageContainer() {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
-
-  const openLightbox = useCallback((event, { photo, index }) => {
-    setCurrentImage(index);
-    setViewerIsOpen(true);
-  }, []);
-
-  const closeLightbox = () => {
-    setCurrentImage(0);
-    setViewerIsOpen(false);
-  };
 
   return (
     <div style={{ maxWidth: "800px", textAlign: "center", margin: "auto" }}>
+      <SRLWrapper options={lightboxOptions}>
       <Grid
         container
         spacing={2}
@@ -46,6 +50,7 @@ export default function ImageContainer() {
           );
         })}
       </Grid>
+      </SRLWrapper>
     </div>
   );
 }
