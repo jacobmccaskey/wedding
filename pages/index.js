@@ -53,7 +53,7 @@ export default function Home() {
         <p style={{ fontSize: "20px", color: "darkgrey", marginTop: 0 }}>
           BROOKINGS, OR
         </p>
-        <Navigator page={'home'} />
+        <Navigator page={"home"} />
         <div
           style={{
             position: "relative",
@@ -90,11 +90,33 @@ export default function Home() {
             fontSize: "22px",
             fontWeight: 200,
             marginTop: 0,
+            marginBottom: 0
           }}
         >
           JUNE 8, 2023
         </h3>
-        <h2 style={state.isMobile ? {fontSize: '15px'} : null}>{countdown}</h2>
+        <div
+          style={{
+            position: "relative",
+            maxWidth: "400px",
+            height: "5rem",
+            textAlign: "center",
+            objectAlign: "center",
+            margin: "auto",
+          }}
+        >
+          <Image
+            src="/images/Underline5.jpg"
+            alt="underline"
+            layout="fill"
+            objectFit="contain"
+            placeholder="blur"
+            blurDataURL
+          />
+        </div>
+        <h2 style={state.isMobile ? { fontSize: "15px" } : null}>
+          {countdown}
+        </h2>
         <EmailProvider />
         <div
           style={{
