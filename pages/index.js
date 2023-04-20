@@ -95,7 +95,7 @@ export default function Home() {
         >
           JUNE 8, 2023
         </h3>
-        <div
+        {/* <div
           style={{
             position: "relative",
             maxWidth: "400px",
@@ -113,7 +113,7 @@ export default function Home() {
             placeholder="blur"
             blurDataURL
           />
-        </div>
+        </div> */}
         <h2 style={state.isMobile ? { fontSize: "15px" } : null}>
           {countdown}
         </h2>
