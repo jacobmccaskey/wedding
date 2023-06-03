@@ -154,8 +154,8 @@ export default function Registry() {
         />
         <Card
           header="Snorklin'"
-          name={"price_1LEg7QGfXTCVGAGqATBWofR7"}
-          value={selection.price_1LEg7QGfXTCVGAGqATBWofR7}
+          name={"price_1N79l9GfXTCVGAGqhqUiESKR"}
+          value={selection.price_1N79l9GfXTCVGAGqhqUiESKR}
           text="Help Ashley live her best life."
           price="20"
           imagePath="/images/snorkling.png"
