@@ -115,7 +115,8 @@ export default function Home() {
           />
         </div> */}
         <h2 style={state.isMobile ? { fontSize: "15px" } : null}>
-          {countdown}
+          {/* {countdown} */}
+          Married!
         </h2>
         <EmailProvider />
         <div
